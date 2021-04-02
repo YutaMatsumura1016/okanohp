@@ -362,11 +362,11 @@ table th, table td {
 		text-align: center;
 		margin-bottom: 0%;
 		display: flex;
-		margin-left: 46%;
+		margin-left: 42%;
 		min-width: 300px;
 	}
 	.atsumare img{
-		width: 12%;
+		width: 30%;
 		height: auto;
 	}
 
