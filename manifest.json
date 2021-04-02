@@ -1,6 +1,6 @@
 {
 
-	"short_name": "20OFEF",
+	"short_name": "21丘企画",
 	"icons": [
 		{
 			"src":"icons/android-chrome-192.png",
@@ -24,7 +24,7 @@
 		}
 	],
 
-	"name": "20OFEF",
+	"name": "21丘企画",
 	"background_color": "#ffffff",
 	"theme_color": "#ffffff",
 	"display": "standalone",

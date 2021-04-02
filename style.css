@@ -5,7 +5,7 @@
 
 /* ボディ */
 body{
-	background-image: url(images/高野_白掛け.png);
+	background-image: url(images/丘全貌.png);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -19,7 +19,7 @@ body:after{
 	left: 0;
 	right: 0;
 	z-index: -1;
-	background: url(images/高野_白掛け.png) center center;
+	background: url(images/丘全貌.png) center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -55,15 +55,26 @@ a{
 .header{
 	display: flex;
 }
+.headerTab{
+	margin-top: 0%;
+	margin-left: 2%;
+	margin-bottom: 0%;
+}
+
 .site-header{
 	position: fixed;
 	max-width: 1200px;
 	min-width: 900px;
 }
 .site-header img{
-	width: 20%;
+	width: 8%;
 	height: auto;
 }
+.tabs{
+	margin-left: 3%;
+}
+
+
 
 /* フッター */
 .footer{
@@ -99,15 +110,12 @@ a{
 	opacity: 0.9;
 }
 
-/* 右上のタブメニュー */
+/* 左上のタブメニュー */
 .tabs{
-	position: fixed;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	top: 0px;
-	right: 20px;
+	position: fixed;
 	color: #ffffff;
+	font-size: 20px;
 	font-family: 'Noto Sans JP', sans-serif;
 	font-weight: 100;
 }
@@ -115,7 +123,7 @@ a{
 	display: inline-block;
 }
 .tabsSpace{
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 /* ハンバーガーメニュー */
@@ -256,8 +264,10 @@ a{
 .allContents a{
 	color: #333333;
 }
+.blank{
+	margin-bottom: 15%;
+}
 
-	
 /* 検索の共通設定 */
 .erabu{
 	float: left;
@@ -351,29 +361,10 @@ table th, table td {
 /* 端末ごとの表示設定 */
 /*PC*/
 @media screen and (min-width: 600px){
-	/* ヘッダーの設定 */
-	.site-header{
-		margin-top: 0.5%;
-		margin-left: 2%;
-	}
-
-	/* 画面上部の画像設定 */
-	.atsumare{
-		text-align: center;
-		margin-bottom: 0%;
-		display: flex;
-		margin-left: 42%;
-		min-width: 300px;
-	}
-	.atsumare img{
-		width: 30%;
-		height: auto;
-	}
-
 	/* 文字設定 */
 	.title{
 		font-size: 50px;
-		margin-top: 5%;
+		margin-top: 0%;
 		margin-left: 5%;
 		margin-bottom: 7%;
 		color: #000000;
