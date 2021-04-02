@@ -358,14 +358,14 @@ table th, table td {
 	}
 
 	/* 画面上部の画像設定 */
-	.imaara{
+	.atsumare{
 		text-align: center;
 		margin-bottom: 0%;
 		display: flex;
 		margin-left: 46%;
 		min-width: 300px;
 	}
-	.imaara img{
+	.atsumare img{
 		width: 12%;
 		height: auto;
 	}
@@ -473,10 +473,10 @@ table th, table td {
 	}
 
 	/* 狭いので画像は表示させない */
-	.imaara{
+	.atsumare{
 		/* これがないと下が動かない...？ */
 	}
-	.imaara img{
+	.atsumare img{
 		opacity: 0;
 	}
 
