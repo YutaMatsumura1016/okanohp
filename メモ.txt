@@ -1,0 +1,60 @@
+[PWA]
+・VS CodeはApp dataフォルダにある
+・アイコンの最小サイズは192*192
+・×(かける)は「x(小文字エックス)」
+・sw.jsは直下でないと動かない
+・sw.jsは絶対パスで書く
+・manifest.jsonのパスは「./manifest.json」
+・Chromeのコンソールは再読み込みしないと重複エラーになる
+・startURLは「./」(ピリオドがないとエラーになる)
+・内容を更新したらキャッシュ番号も更新
+
+
+
+[GIT]
+・これでインストールして
+https://qiita.com/y-tsutsu/items/2ba96b16b220fb5913be
+
+・導入はこれで
+https://qiita.com/jesus_isao/items/63557eba36819faa4ad9
+
+・Githubはこれ
+https://note.com/ocha_green/n/n4f2200399859
+
+・更新したらVSCodeで「ソース管理タブにメッセージ→ctrl + enter」
+・git push
+
+
+・ステージングは「ローカルリポジトリの更新対象に追加」
+・コミットは「ローカルリポジトリを更新」
+・プッシュは「ローカルリポジトリの内容をリモートサーバに更新」
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+がないとメディアクエリがうまく動かない
+
+・https://yutamatsumura1016.github.io/20OFEF/
+
+・iOSはmanifest.jsonが読み込めない.PWAcompactを使うとよい。
+
+
+[csv作成時リンク記入用のマクロ]
+Public Sub GetURL()
+　　Dim h As Hyperlink
+　　Dim a As String
+　　Dim s As String
+　　For Each h In ActiveSheet.Hyperlinks
+　　　　a = h.Address
+　　　　s = h.SubAddress
+　　　　If s <> "" Then
+　　　　　　a = a & "#" & s
+　　　　End If
+　　　　h.Range.Offset(0, 1) = a
+　　Next
+End Sub
+
+
+[やりたいこと]
+・プッシュ通知
+・内容充実
+・ログイン
+・計画検索機能

@@ -1,0 +1,588 @@
+/* 全体開始 */
+
+/* ---------------------------------------------------------------------- */
+/* 共通のスタイル */
+
+/* ボディ */
+body{
+	background-image: url(images/高野_白掛け.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+body:after{
+	content: "";
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: url(images/高野_白掛け.png) center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* リンク色 */
+a:link { color: #000000; }
+a:visited { color: #000000; }
+a:hover { color: #EE1111; }
+a:active { color: #AA1111; }
+
+a.tabsColor:link {
+	color: #ffffff;
+	text-decoration: none;
+	}
+a.tabsColor:visited {
+	color: #ffffff;
+	text-decoration: none;}
+a.tabsColor:hover {
+	color: #0066ee;
+	text-decoration: none;
+	}
+a.tabsColor:active {
+	color: #0066ee;
+	text-decoration: none;
+	}
+a{
+	text-decoration: none;
+}
+
+/* ヘッダー */
+.header{
+	display: flex;
+}
+.site-header{
+	position: fixed;
+	max-width: 1200px;
+	min-width: 900px;
+}
+.site-header img{
+	width: 20%;
+	height: auto;
+}
+
+/* フッター */
+.footer{
+	position: fixed;
+	bottom: 0px;
+}
+.site-footer{
+	position: fixed;
+	bottom: 0px;
+}
+.underTabs{
+	position: fixed;
+	bottom: 0px;
+	margin: 0px;
+	width: 100%;
+	table-layout: fixed;
+	word-break: break-word;
+	border-collapse: collapse;	
+}
+.underTabs th{
+	padding: 0%;
+	margin: 0px;
+	background-color: #ffffffe7;
+	border: solid 1.5px #6666666c;
+}
+
+.underTabsSpace img{
+	margin-top: 7%;
+	opacity: 0.5;
+}
+.underTabsSpaceNow img{
+	margin-top: 7%;
+	opacity: 0.9;
+}
+
+/* 右上のタブメニュー */
+.tabs{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0px;
+	right: 20px;
+	color: #ffffff;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 100;
+}
+.tabs li{
+	display: inline-block;
+}
+.tabsSpace{
+	margin-left: 20px;
+}
+
+/* ハンバーガーメニュー */
+.menuHidden{ 
+	display: none; 
+}
+.menuOpen {
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	height: 45px;
+	width: 45px;
+	z-index: 100;
+	background-color: #999999bb;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.menuOpen span,
+.menuOpen span:before,
+.menuOpen span:after {
+	content: '';
+	display: block;
+	height: 1.5px;
+	width: 25px;
+	background-color: #ffffff99;
+	transition: 0.1s;
+	position: absolute;
+}
+.menuOpen span:before {
+	bottom: 10px;
+}
+.menuOpen span:after {
+	top: 10px;
+}
+#menuCheck:checked ~ .menuOpen span {
+	background-color: rgba(255, 255, 255, 0);
+}
+#menuCheck:checked ~ .menuOpen span::before {
+	bottom: 0;
+	transform: rotate(45deg);
+}
+#menuCheck:checked ~ .menuOpen span::after {
+   	top: 0;
+   	transform: rotate(-45deg);
+}
+.humburgerContent {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 100%;
+	z-index: 99;
+	background-color: #666666b6;
+	transition: all 0.2s;
+}
+.humburgerContent ul {
+	padding: 70px 10px 0;
+}
+.humburgerContent ul li {
+	border-bottom: solid 1px #ffffffbb;
+	margin-bottom: 1.5%;
+	list-style: none;
+}
+.humburgerContent ul li a {
+	display: block;
+	width: 100%;
+	font-size: 18px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	box-sizing: border-box;
+	color:#ffffffd7;
+	text-decoration: none;
+	padding: 9px 15px 10px 0;
+	position: relative;
+}
+.humburgerContent ul li a::before {
+	content: "";
+	width: 7px;
+	height: 7px;
+	border-top: solid 2px #ffffffbb;
+	border-right: solid 2px #ffffffbb;
+	transform: rotate(45deg);
+	position: absolute;
+	right: 11px;
+	top: 16px;
+}
+/* 画面が小さいときはメニューを大きく表示 */
+@media screen and (min-width: 830px){
+	#menuCheck:checked ~ .humburgerContent {
+		left: 70%;
+	}
+}
+@media screen and (max-width: 829px){
+	#menuCheck:checked ~ .humburgerContent {
+		left: 30%;
+	}
+}
+/* ハンバーガーメニューここまで */
+
+
+/* 文字の共通設定 */
+.title{
+	color: #333333;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+}
+.subTitle{
+	color: #333333;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+	list-style: none;
+	display: block;
+}
+.subTitle::-webkit-details-marker {
+	display: none;
+}
+.hrSubTitle{
+	background-color: #666666;
+	border: none;
+}
+.kakoTitle{
+	color: #333333;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+}
+.hrkakoTitle{
+	border-color: #ccccccbb;
+	width: 90%;
+}
+.allContents{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	list-style: none;
+}
+.allContents a{
+	color: #333333;
+}
+
+	
+/* 検索の共通設定 */
+.erabu{
+	float: left;
+	border-radius: 6px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	background: #ffffff88;
+}
+.nyuryoku{
+	border-radius: 6px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	background: #ffffff88;
+}
+.kensakuBtn{
+	border-radius: 6px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+	background: #ffffff88;
+}
+.kensakusita{
+	display: none;
+}
+.kekkaTable{
+	width: 100%;
+	margin: 0px;
+	background-color: #ffffffb9;
+	text-align: center;
+	border: 1px;
+	border-collapse: collapse;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	table-layout: auto;
+}
+table th, table td {
+	border: solid 1px #999999b9;
+	padding: 0.7% 0.2%;
+}
+.kekkaTable tr > *:nth-child(10) {
+	display: none;
+}
+.toprow{
+	position: sticky;
+	top: 8%;
+	background: #cccccce1;
+}
+
+/* ---------------------------------------------------------------------- */
+/* トップに戻る */
+#modoruTop {
+	cursor: pointer;
+	position: fixed;
+	opacity: 0.8;
+  }
+
+/* ---------------------------------------------------------------------- */
+
+/* ここから先メディアクエリ */
+
+/* ---------------------------------------------------------------------- */
+/* 各メニューの表示設定 */
+/* 下のタブ */
+@media screen and (min-width: 1px) and (max-width: 599px){
+	.tabs{
+		display: none;
+	}
+	.humburgerMenu{
+		display: none;
+	}
+}
+/* ハンバーガー */
+@media screen and (min-width: 600px) and (max-width: 1360px){
+	.tabs{
+		display: none;
+	}
+	.site-footer{
+		display: none;
+	}
+}
+/* 上のタブ */
+@media screen and (min-width: 1361px){
+	.humburgerMenu{
+		display: none;
+	}
+	.site-footer{
+		display: none;
+	}
+}
+
+/* ---------------------------------------------------------------------- */
+/* 端末ごとの表示設定 */
+/*PC*/
+@media screen and (min-width: 600px){
+	/* ヘッダーの設定 */
+	.site-header{
+		margin-top: 0.5%;
+		margin-left: 2%;
+	}
+
+	/* 画面上部の画像設定 */
+	.imaara{
+		text-align: center;
+		margin-bottom: 0%;
+		display: flex;
+		margin-left: 46%;
+		min-width: 300px;
+	}
+	.imaara img{
+		width: 12%;
+		height: auto;
+	}
+
+	/* 文字設定 */
+	.title{
+		font-size: 50px;
+		margin-top: 5%;
+		margin-left: 5%;
+		margin-bottom: 7%;
+		color: #000000;
+	}
+	.subTitle{
+		font-size: 40px;
+		letter-spacing: 3px;
+		margin-top: 3%;
+		margin-left: 12%;
+		margin-bottom: 1%;
+	}
+	.hrSubTitle{
+		margin-left: 0%;
+		margin-top: 0.2%;
+		margin-bottom: 0;
+		width: 80%;
+		height: 2px;
+	}
+	.hrTitle{
+		margin-left: 0;
+		margin-top: 0.2%;
+		margin-bottom: 10%;
+		background-color: #ccccccbb;
+		border: none;
+		width: 90%;
+		height: 2px;
+	}
+	.kakoTitle{
+		font-size: 40px;
+		margin-top: 5%;
+		margin-left: 7%;
+		margin-bottom: -1%;
+	}
+	.allContents{
+		margin-bottom: 3%;
+		margin-left: 12%;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 30px;
+	}
+	.allContents a{
+		color: #000000;
+	}
+	.kensakusuru{
+		margin-top: -5%;
+		margin-left: 8%;
+	}
+
+	/* 検索設定 */
+	.erabu{
+		width: 100px;
+		height: 30px;
+		margin-top: 0%;
+		margin-left: 0%;
+		margin-right: 1%;
+		font-size: 15px;
+	}
+	.nyuryoku{
+		width: 300px;
+		height: 26px;
+		margin-top: 0%;
+		margin-bottom: 0%;
+		font-size: 15px;
+	}
+	.kensakuBtn{
+		width: 80px;
+		height: 30px;
+		margin-top: -2%;
+		margin-bottom: 1%;
+		margin-left: 339px;
+		font-size: 15px;
+	}
+}
+
+	#modoruTop {
+		width: 30%;
+		margin-left: 90%;  
+		bottom: 10%;
+	}
+
+/* ---------------------------------------------------------------------- */
+/*スマホ */
+@media screen and (min-width: 1px) and (max-width: 599px){
+	/* 全体設定 */
+	body{
+		margin: 0px;
+		padding-bottom: 20%;	
+	};
+
+	/* ヘッダー設定 */
+	.site-header{
+		/* これがないと下が動かない...？ */
+	}
+	.site-header img{
+		margin-top: -0.5%;
+		margin-left: 1.5%;
+	}
+
+	/* 狭いので画像は表示させない */
+	.imaara{
+		/* これがないと下が動かない...？ */
+	}
+	.imaara img{
+		opacity: 0;
+	}
+
+	/* 文字設定 */
+	.title{
+		font-size: 200%;
+		margin-top: 0%;
+		margin-left: 5%;
+		margin-right: 0px;
+		margin-bottom: 17%;
+	}
+	.hrTitle{
+		display: none;
+	}
+	.subTitle{
+		font-size: 200%;
+		letter-spacing: 0px;
+		margin-left: 5%;
+		margin-top: 10%;
+		margin-bottom: 0%;
+	}
+	.hrSubTitle{
+		margin-left: 0%;
+		margin-top: 0%;
+		width: 95%;
+		height: 2px;
+	}
+	.kakoTitle{
+		font-size: 170%;
+		margin-top: 5%;
+		margin-left: 5%;
+		margin-right: 0px;
+		margin-bottom: -7%;
+	}
+	.hrkakoTitle{
+		margin-left: 5%;
+	}
+	.allContents{
+		margin-top: 0%;
+		margin-bottom: 0%;
+		margin-left: 5%;
+		font-size: 130%;
+		font-weight: 400;
+		line-height: 160%;
+
+	}
+
+	/* 検索設定 */
+	.kensakusuru{
+		margin-top: -12%;
+	}
+	.erabu{
+		width: 30%;
+		height: 32px;
+		margin-top: 0%;
+		margin-bottom: 4%;
+		font-size: 15px;
+		font-weight: 400;
+		background: #ffffffb9;
+	}
+	.nyuryoku{
+		width: 98.3%;
+        justify-content: center;
+        align-items: center;
+		height: 30px;
+		margin: 0px;
+		margin-top: -3%;
+		margin-bottom: 0%;
+		font-size: 15px;
+		background: #ffffffb9;
+	}
+	.kensakuBtn{
+		width: 30%;
+		height: 35px;
+		margin-top: 0%;
+		margin-bottom: 1%;
+		margin-left:70.4%;
+		font-size: 19px;
+		text-align: center;
+		background: #ffffffb9;
+	}
+	.kekkaTable table{
+		width: 80%;
+	}
+	.kekkaTable tr > *:nth-child(3) {
+		display: none;
+	}
+	.kekkaTable tr > *:nth-child(4) {
+		display: none;
+	}
+	.kekkaTable tr > *:nth-child(5) {
+		display: none;
+	}
+	.kekkaTable tr > *:nth-child(6) {
+		display: none;
+	}
+	.kekkaTable tr > *:nth-child(8) {
+		display: none;
+	}
+
+	#modoruTop {
+		width: 100%;
+		margin-left: 80%;  
+		bottom: 10.0%;
+	  }
+	
+}
+
+
